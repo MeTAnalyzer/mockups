@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <title>MeTAnalyzer - Dashboard</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <html>
+  <!-- Demo Dependencies -->
+  <script src="js/jquery-1.10.2.min.js"></script>
+  <script src="js/d3.v3.min.js"></script>
+  <script src="js/underscore-min.js"></script>
+  <script src="./satisfaction/jquery.min.js.download" type="text/javascript"></script>
+  <script src="./satisfaction/bootstrap.min.js.download" type="text/javascript"></script>
+  <link href="./satisfaction/bootstrap.min.css" rel="stylesheet" type="text/css">
+  <script src="./satisfaction/holder.min.js.download" type="text/javascript"></script>
+  <script src="./satisfaction/keen-tracking-1.1.4.min.js.download"></script>
+  <script>
+    Holder.add_theme("white", { background: "#fff", foreground: "#a7a7a7", size: 10 });
+  </script>
+
+  <!-- Dashboard -->
+  <link rel="stylesheet" type="text/css" href="./satisfaction/keen-dashboards.css">
+  <style id="holderjs-style" type="text/css"></style>
+  <link href="./satisfaction/styles.css" rel="stylesheet" type="text/css">
+</head>
+
+<body class="keen-dashboard" style="padding-top: 80px;">
+
+  <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+
+        <a class="navbar-brand" href="">MeTAnalyzer » Trends » Commuter Satisfaction </a>
+        </a>
+        </a>
+      </div>
+      <div class="navbar-collapse collapse">
+        <ul class="nav navbar-nav navbar-right">
+          <li>
+            <a href="https://metanalyzer.github.io/">Home</a>
+          </li>
+          <li>
+            <a href="https://metanalyzer.github.io">Trends</a>
+          </li>
+          <li>
+            <a href="https://metanalyzer.github.io">Predictions</a>
+          </li>
+          <li>
+            <a href="https://metanalyzer.github.io">Initiatives</a>
+          </li>
+          <li>
+            <a href="https://metanalyzer.github.io">API</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-sm-3">
+        <div class="chart-wrapper">
+          <div class="chart-title">
+            Subway Lines
+          </div>
+          <div class="chart-stage">
+            <!-- <img data-src="holder.js/100%x650/white" alt="100%x650" " src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNTIiIGhlaWdodD0iNjUwIj48cmVjdCB3aWR0aD0iMjUyIiBoZWlnaHQ9IjY1MCIgZmlsbD0iI2ZmZiIvPjx0ZXh0IHRleHQtYW5jaG9yPSJtaWRkbGUiIHg9IjEyNiIgeT0iMzI1IiBzdHlsZT0iZmlsbDojYTdhN2E3O2ZvbnQtd2VpZ2h0OmJvbGQ7Zm9udC1zaXplOjQxcHg7Zm9udC1mYW1pbHk6QXJpYWwsSGVsdmV0aWNhLHNhbnMtc2VyaWY7ZG9taW5hbnQtYmFzZWxpbmU6Y2VudHJhbCI+MjUyeDY1MDwvdGV4dD48L3N2Zz4="> -->
+            <div class="container-subway-lines">
+              <div class=" cards-subway">
+                <div class="card-subway" id="train-a">
+                  <div class="card-logo" style="background:rgb(3, 3, 202);">
+                    <div class="card-logo-circle">
+                      <div class="card-logo-letter">A</div>
+                    </div>
+
+                  </div>
+                  <div class="card-text">86%</div>
+                </div>
+                <div class="card-subway" id="train-c">
+                  <div class="card-logo" style="background:rgb(3, 3, 202);">
+                    <div class="card-logo-circle">
+                      <div class="card-logo-letter">C</div>
+                    </div>
+
+                  </div>
+                  <div class="card-text">83%</div>
+                </div>
+                <div class="card-subway" id="train-e">
+                  <div class="card-logo" style="background:rgba(3, 3, 202);">
+                    <div class="card-logo-circle">
+                      <div class="card-logo-letter">E</div>
+                    </div>
+
+                  </div>
+                  <div class="card-text">91%</div>
+                </div>
+                <div class="card-subway" id="train-1">
+                  <div class="card-logo" style="background:rgba(199, 2, 2, .9);">
+                    <div class="card-logo-circle">
+                      <div class="card-logo-letter">1</div>
+                    </div>
+
+                  </div>
+                  <div class="card-text">73%</div>
+                </div>
+                <div class="card-subway" id="train-2">
+                  <div class="card-logo" style="background:rgba(199, 2, 2, .9);">
+                    <div class="card-logo-circle">
+                      <div class="card-logo-letter">2</div>
+                    </div>
+
+                  </div>
+                  <div class="card-text">66%</div>
+                </div>
+
+                <div class="card-subway" id="train-3">
+                  <div class="card-logo" style="background:rgb(199, 2, 2)">
+                    <div class="card-logo-circle">
+                      <div class="card-logo-letter">3</div>
+                    </div>
+
+                  </div>
+                  <div class="card-text">45%</div>
+                </div>
+                <div class="card-subway" id="train-4">
+                  <div class="card-logo" style="background:rgb(2, 126, 2);">
+                    <div class="card-logo-circle">
+                      <div class="card-logo-letter">4</div>
+                    </div>
+
+                  </div>
+                  <div class="card-text">48%</div>
+                </div>
+                <div class="card-subway" id="train-5">
+                  <div class="card-logo" style="background:rgb(2, 126, 2);">
+                    <div class="card-logo-circle">
+                      <div class="card-logo-letter">5</div>
+                    </div>
+
+                  </div>
+                  <div class="card-text">23%</div>
+                </div>
+                <div class="card-subway" id="train-6">
+                  <div class="card-logo last" style="background:rgb(2, 126, 2);">
+                    <div class="card-logo-circle">
+                      <div class="card-logo-letter">6</div>
+                    </div>
+
+                  </div>
+                  <div class="card-text">86%</div>
+                </div>
+
+              </div>
+
+
+            </div>
+
+          </div>
+          <div class=" chart-notes ">
+            Current satisfaction for the past week.
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-9 ">
+        <div class="row ">
+          <div class="col-sm-12 ">
+            <div class="chart-wrapper ">
+              <div class="chart-title ">
+                Satisfaction by Day
+              </div>
+              <div class="chart-stage ">
+                <div style="height: 90%; width: 100%; display: block; ">
+                  <div>
+                    <canvas id="myChart"></canvas>
+                  </div>
+
+                </div>
+              </div>
+
+              <div class="chart-notes ">
+                Satisfaction levels are 86% of yesterday's level.
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+  <div class="container-fluid ">
+    <p class="small text-muted ">
+    </p>
+  </div>
+
+  <!-- Project Analytics -->
+  <script type="text/javascript " src="./satisfaction/keen-analytics.js.download "></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.1.4/Chart.min.js"></script>
+  <script type="text/javascript " src="satisfaction/hourly.js"></script>
+
+</body>
+
+
+</html>
